@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "youtrack-workflow-builder": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/server.ts"],
+      "cwd": "youtrack-workflow-builder",
+      "env": { "YOUTRACK_URL": "https://yourcompany.youtrack.cloud", "YOUTRACK_TOKEN": "perm:…" }
+    }
+  }
+}
