@@ -11,7 +11,7 @@ Claude composes **YouTrack workflows from tested building blocks** through an MC
                                         ▼ deploy_workflow     ──▶ REST plan (dry-run default) / real deploy (confirm + env creds)
 ```
 
-* `src/blocks/` — 9 triggers, 9 conditions, 15 actions ([catalogue](docs/BLOCKS.md)); every block records which popular PM tool recipe it was distilled from (Jira Automation, Asana Rules, Linear, ClickUp, Monday.com, Trello Butler, GitHub Projects, Zendesk).
+* `src/blocks/` — 9 triggers, 10 conditions, 15 actions ([catalogue](docs/BLOCKS.md)); every block records which popular PM tool recipe it was distilled from (Jira Automation, Asana Rules, Linear, ClickUp, Monday.com, Trello Butler, GitHub Projects, Zendesk).
 * `src/compiler.ts` — spec → YouTrack JS (`entities.Issue.onChange` / `onSchedule`, generated `requirements`). All user strings go through `JSON.stringify`; names/queries/templates are whitelisted, so a spec cannot inject code.
 * `src/sim/` — runtime model: transactions with rollback on `workflow.check`, `isChanged/oldValue/becomes*`, tags, comments, subtask links, `search.search`, cron-style schedule runs with a controllable clock, project-schema `requirements` check (unknown field/value ⇒ load error).
 * `src/scenario.ts` — scenario DSL with assertions (fields, tags, blocked message, notifications, due date, rule ran/not ran).
